@@ -16,9 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.koszykowka.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    //private TextView text;
-    //private Button button1, button2, button3;
-    //private int punkty;
     private PunktyViewModel punktyViewModel;
     private ActivityMainBinding binding;
     @Override
@@ -29,15 +26,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         punktyViewModel = new ViewModelProvider(this).get(PunktyViewModel.class);
-        //setContentView(R.layout.activity_main);
 
-        //text = findViewById(R.id.textView);
-        //button1 = findViewById(R.id.button1);
-        //button2 = findViewById(R.id.button2);
-        //button3 = findViewById(R.id.button3);
-        //if(savedInstanceState != null){
-        //    punkty = savedInstanceState.getInt("PUNKTY",0);
-        //}
        binding.textView.setText(String.valueOf(punktyViewModel.getPunkty()));
 
         binding.button1.setOnClickListener(
@@ -68,10 +57,4 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
     }
-
-    //@Override
-    //protected void onSaveInstanceState(@NonNull Bundle outState) {
-    //    super.onSaveInstanceState(outState);
-    //    outState.putInt("PUNKTY",punktyViewModel.getPunkty());
-    //}
 }
